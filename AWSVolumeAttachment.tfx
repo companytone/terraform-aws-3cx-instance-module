@@ -1,0 +1,6 @@
+resource "aws_volume_attachment" "AWSVolumeAttachment" {
+  device_name = "/dev/xvdb"
+  volume_id   = "${aws_ebs_volume.AWSEBSVolume.id}"
+  instance_id = "${aws_instance.AWSInstance.id}"
+  provider    = "aws.SubAccount"
+}
